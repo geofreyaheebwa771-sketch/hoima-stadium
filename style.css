@@ -1,0 +1,933 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00c853;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00c853;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.75)
+    ),
+    url("images/stadium.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 10%;
+}
+
+.hero-content {
+    max-width: 750px;
+    color: white;
+}
+
+.welcome {
+    color: #00c853;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 65px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #00c853;
+}
+
+.hero-text {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 28px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: #00c853;
+    color: white;
+}
+
+.primary:hover {
+    background: #009624;
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.secondary:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   MATCH SECTION
+========================= */
+
+.match-section {
+
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background: white;
+}
+
+.match-section h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 50px;
+}
+
+.match-card {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 70px;
+
+    background: #101820;
+
+    color: white;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,0.2);
+}
+
+.team-logo {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+}
+
+.team h3 {
+
+    font-size: 20px;
+}
+
+.match-info {
+
+    text-align: center;
+}
+
+.vs {
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    color: #00c853;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TICKETS
+========================= */
+
+.ticket-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 50px;
+
+    flex-wrap: wrap;
+}
+
+.ticket {
+
+    background: #f5f5f5;
+
+    padding: 35px;
+
+    width: 280px;
+
+    border-radius: 15px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,0.15);
+
+    transition: 0.3s;
+}
+
+.ticket:hover {
+
+    transform:
+    translateY(-10px);
+}
+
+.ticket h2 {
+
+    color: #00a844;
+
+    margin: 20px 0;
+}
+
+.ticket button {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    background: #00c853;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.vip-ticket {
+
+    background:
+    linear-gradient(
+    135deg,
+    #1c1c1c,
+    #3b3b3b
+    );
+
+    color: white;
+}
+
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.activities {
+
+    padding: 100px 10%;
+
+    text-align: center;
+}
+
+.activities h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.section-text {
+
+    margin-bottom: 50px;
+
+    color: #666;
+}
+
+.activity-grid {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,
+    minmax(220px,1fr));
+
+    gap: 30px;
+}
+
+.activity-card {
+
+    background: white;
+
+    padding: 35px 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+
+    transform:
+    translateY(-10px);
+}
+
+.activity-icon {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   STADIUM SECTION
+========================= */
+
+.stadium {
+
+    min-height: 600px;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+    ),
+    url("images/stadium-night.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 10%;
+
+    color: white;
+}
+
+.stadium-content {
+
+    max-width: 600px;
+}
+
+.stadium h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.stadium ul {
+
+    margin-top: 25px;
+
+    list-style: none;
+}
+
+.stadium li {
+
+    margin: 12px 0;
+
+    font-size: 17px;
+}
+
+.explore-btn {
+
+    margin-top: 30px;
+
+    padding: 16px 30px;
+
+    background: #00c853;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   VIP SECTION
+========================= */
+
+.vip-section {
+
+    padding: 100px 10%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #111,
+    #292929
+    );
+
+    color: white;
+
+    text-align: center;
+}
+
+.vip-section h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 50px;
+}
+
+.vip-container {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,
+    minmax(250px,1fr));
+
+    gap: 30px;
+}
+
+.vip-card {
+
+    padding: 40px 25px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #333,
+    #111
+    );
+
+    border-radius: 15px;
+
+    border:
+    1px solid #00c853;
+
+    transition: 0.3s;
+}
+
+.vip-card:hover {
+
+    transform:
+    translateY(-10px);
+}
+
+
+/* =========================
+   BOOKING SECTION
+========================= */
+
+.booking {
+
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background: white;
+}
+
+.booking h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.booking-btn {
+
+    margin-top: 30px;
+
+    padding: 18px 40px;
+
+    border: none;
+
+    background: #00c853;
+
+    color: white;
+
+    font-size: 16px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.booking-btn:hover {
+
+    background: #009624;
+
+    transform:
+    translateY(-3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #111;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 10%;
+}
+
+footer h2 {
+
+    margin-bottom: 15px;
+
+    color: #00c853;
+}
+
+
+/* =========================
+   MOBILE VERSION
+========================= */
+
+@media
+(max-width: 768px) {
+
+    .nav-links {
+
+        display: none;
+    }
+
+    .menu-btn {
+
+        display: block;
+    }
+
+    .hero h1 {
+
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+
+        flex-direction: column;
+    }
+
+    .match-card {
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .stadium h2 {
+
+        font-size: 35px;
+    }
+
+}/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background: #f4f6f8;
+}
+
+.gallery-section h2 {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+
+    gap: 25px;
+
+    margin-top: 50px;
+}
+
+
+.gallery-item {
+
+    position: relative;
+
+    height: 250px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+    0 10px 30px
+    rgba(0,0,0,0.15);
+}
+
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.gallery-item:hover img {
+
+    transform: scale(1.15);
+}
+
+
+.gallery-title {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    background:
+    linear-gradient(
+        transparent,
+        rgba(0,0,0,0.9)
+    );
+}
+
+
+/* =========================
+   BOOKING FORM
+========================= */
+
+.booking form {
+
+    max-width: 600px;
+
+    margin: 50px auto;
+
+    padding: 40px;
+
+    background: #f5f5f5;
+
+    border-radius: 20px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(0,0,0,0.1);
+
+    text-align: left;
+}
+
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border:
+
+    1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #00c853;
+}
+
+
+.total-box {
+
+    background: #101820;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    margin-top: 30px;
+}
+
+
+.total-box h2 {
+
+    color: #00c853;
+
+    margin-top: 10px;
+}/* =========================
+   3D STADIUM PAGE
+========================= */
+
+.three-body {
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: black;
+
+}
+
+
+#stadium3d {
+
+    width: 100vw;
+
+    height: 100vh;
+
+}
+
+
+.three-header {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,0.8),
+        transparent
+    );
+
+    color: white;
+
+    z-index: 10;
+
+}
+
+
+.back-button {
+
+    background: #00c853;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+}
+
+
+.three-header h2 {
+
+    margin: 0;
+
+}
+
+
+.three-header p {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+}/* MTN PAYMENT BOX */
+
+.payment-box {
+    background: #fff3cd;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.payment-box h3 {
+    margin-bottom: 15px;
+}
+
+.payment-box p {
+    margin: 10px 0;
+}
+
+.payment-box input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
